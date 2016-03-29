@@ -21,13 +21,23 @@ chrome.contextMenus.create({
   documentUrlPatterns: ["http://www.instagram.com/*",
             "https://www.instagram.com/*"] // show on all addresses
 });
-// chrome.contextMenus.create({
-//   type: 'normal', // the default textual option
-//   title: 'Open Instagram Image in New Tab', // the text that is displayed
-//   contexts: ['page'], // only display on selected text
-//   onclick: function(obj) {
-//     genericOnClick('new');
-//   },
-//   documentUrlPatterns: ["http://www.instagram.com/*",
-//             "https://www.instagram.com/*"] // show on all addresses
-// });
+chrome.contextMenus.create({
+  type: 'normal', // the default textual option
+  title: 'Open Instagram Image in New Tab', // the text that is displayed
+  contexts: ['page'], // only display on selected text
+  onclick: function(obj) {
+    genericOnClick('new');
+  },
+  documentUrlPatterns: ["http://www.instagram.com/*",
+            "https://www.instagram.com/*"] // show on all addresses
+});
+chrome.contextMenus.create({
+  type: 'normal', // the default textual option
+  title: 'Download Instagram Image', // the text that is displayed
+  contexts: ['page'], // only display on selected text
+  onclick: function(obj) {
+    genericOnClick('get');
+  },
+  documentUrlPatterns: ["http://www.instagram.com/*",
+            "https://www.instagram.com/*"] // show on all addresses
+});

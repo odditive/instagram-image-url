@@ -9,7 +9,7 @@ document.addEventListener("mousedown", function(event){
 }, true);
 
 function copyToClipboard(text) {
-  const input = document.createElement('input');
+  var input = document.createElement('input');
   input.style.position = 'fixed';
   input.style.opacity = 0;
   input.value = text;
@@ -18,6 +18,24 @@ function copyToClipboard(text) {
   document.execCommand('Copy');
   document.body.removeChild(input);
 };
+
+function openInNewTab(url) {
+    var a = document.createElement("a");
+    a.target = "_blank";
+    a.href = url;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+function download(url) {
+    var a = document.createElement("a");
+    a.download = true;
+    a.href = url;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
   if(clickedEl.dataset){
@@ -29,6 +47,12 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
       url = url.replace(/=1/g, ".");
       if(request.text == 'copy') {
         copyToClipboard(url);
+      }
+      if(request.text == 'new') {
+        openInNewTab(url);
+      }
+      if(request.text == 'get') {
+        download(url);
       }
     }
   }

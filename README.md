@@ -9,8 +9,8 @@ Just install it from [store](https://chrome.google.com/webstore/detail/instagram
 
 If you wish to make some changes in the code:
 
-1. Run ''' npm install '''
-2. Then '''gulp'''
+1. Run `npm install`. 
+2. Then run `gulp`.
 3. That's all. You Rock!
 
 Now just load unpacked dist folder into the chrome extensions tab.

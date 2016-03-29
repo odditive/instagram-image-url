@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Instagram Image URL",
+  "description": "Get url of insta image easily and in well-known way.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "resources/insta-16.png",
+    "48": "resources/insta-48.png",
+    "128": "resources/insta-128.png"
+  },
+  "author": "Volodymyr Lut",
+  "homepage_url": "http://lut.rocks",
+
+  "background": { "scripts": ["background.js"] },
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.instagram.com/*",
+                "https://www.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "contextMenus"
+  ]
+}

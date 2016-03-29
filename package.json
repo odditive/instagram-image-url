@@ -1,0 +1,22 @@
+{
+  "name": "instaurl",
+  "version": "1.0.0",
+  "description": "chrome extension for getting url of insta image easily",
+  "main": "background.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma"
+  },
+  "author": "Volodymyr Lut",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.32",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-jasmine": "^0.3.5"
+  }
+}

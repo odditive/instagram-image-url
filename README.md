@@ -1,6 +1,8 @@
 # instagram-image-url
 Chrome extension for getting insta image URL easily and in well-known way.
 
+<a target="_blank" href="https://chrome.google.com/webstore/detail/instagram-image-url/fkdmnfbeaepmildaolaoicjbfkghpcco?hl=uk"><img alt="Try it now" src="https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton_small.png" title="Click here to install this sample from the Chrome Web Store"></img></a>
+
 ### Download
 
 Just install it from [store](https://chrome.google.com/webstore/detail/instagram-image-url/fkdmnfbeaepmildaolaoicjbfkghpcco?hl=uk)

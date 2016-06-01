@@ -1,6 +1,6 @@
 {
   "name": "instaurl",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "chrome extension for getting url of insta image easily",
   "main": "background.js",
   "directories": {

@@ -4,7 +4,7 @@ var clickedEl = null;
 document.addEventListener("mousedown", function(event){
     //right click
     if(event.button == 2) {
-        clickedEl = event.target;
+        clickedEl = event.target.parentElement.childNodes[0].childNodes[0];
     }
 }, true);
 
@@ -38,13 +38,9 @@ function download(url) {
 }
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-  if(clickedEl.dataset){
-    if(clickedEl.dataset.reactid){
-      var start = clickedEl.dataset.reactid.search("https=2");
-      var end = clickedEl.dataset.reactid.search("=1jpg") + 5;
-      var url = clickedEl.dataset.reactid.substr(start, end - start);
-      url = url.replace(/=2/g, ":");
-      url = url.replace(/=1/g, ".");
+  if(clickedEl){
+    if(clickedEl.src){
+      url = clickedEl.src;
       if(request.text == 'copy') {
         copyToClipboard(url);
       }

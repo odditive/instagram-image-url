@@ -3,7 +3,7 @@
 
   "name": "Instagram Image URL",
   "description": "Get url of insta image easily and in well-known way.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "icons": {
     "16": "resources/insta-16.png",
     "48": "resources/insta-48.png",

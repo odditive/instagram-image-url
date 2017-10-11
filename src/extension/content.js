@@ -9,32 +9,21 @@ document.addEventListener("mousedown", function(event){
 }, true);
 
 function copyToClipboard(text) {
-  var input = document.createElement('input');
-  input.style.position = 'fixed';
-  input.style.opacity = 0;
-  input.value = text;
-  document.body.appendChild(input);
-  input.select();
-  document.execCommand('Copy');
-  document.body.removeChild(input);
+   var oncopy = function (event) {
+     event.clipboardData.setData("text", text);
+     event.preventDefault();
+   };
+   document.addEventListener('copy', oncopy, false);
+   document.execCommand("Copy", false, null);
+   document.removeEventListener('copy', oncopy, false);
 };
 
 function openInNewTab(url) {
-    var a = document.createElement("a");
-    a.target = "_blank";
-    a.href = url;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  chrome.runtime.sendMessage({ greeting: "instagram_image_new_tab", url: url }, function (response) {});
 }
 
 function download(url) {
-    var a = document.createElement("a");
-    a.download = true;
-    a.href = url;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  chrome.runtime.sendMessage({ greeting: "instagram_image_download", url: url }, function (response) { });
 }
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
@@ -52,4 +41,5 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
       }
     }
   }
+  return;
 });

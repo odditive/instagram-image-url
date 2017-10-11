@@ -10,6 +10,16 @@ function genericOnClick(text) {
     });
   });
 }
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.greeting == "instagram_image_new_tab"){
+    chrome.tabs.create({ url: request.url });
+  }
+  if (request.greeting == "instagram_image_download") {
+    chrome.downloads.download({ url: request.url });
+  }  
+});
+
 // Create context menu item
 chrome.contextMenus.create({
   type: 'normal', // the default textual option

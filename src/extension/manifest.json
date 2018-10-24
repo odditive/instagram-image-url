@@ -9,8 +9,8 @@
     "48": "resources/insta-48.png",
     "128": "resources/insta-128.png"
   },
-  "author": "Volodymyr Lut",
-  "homepage_url": "http://lut.rocks",
+  "author": "Odditive",
+  "homepage_url": "https://www.odditive.com",
 
   "background": { "scripts": ["background.js"] },
 
